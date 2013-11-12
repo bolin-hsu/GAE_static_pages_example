@@ -1,0 +1,17 @@
+application: bhsu-static
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  mime_type: text/html
+  static_files: static_files/html/main.html
+  upload: static_files/html/(.*\.html)
+
+- url: /css
+  static_dir: static_files/css
+
+- url: /js
+  static_dir: static_files/js
